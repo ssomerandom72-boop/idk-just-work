@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chain-code"
+version = "0.1.0"
+description = "Arch Linux oriented coding assistant CLI"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Chain Code Contributors"}]
+license = {text = "MIT"}
+dependencies = [
+  "click>=8.1.7",
+  "rich>=13.7.1",
+  "requests>=2.32.0",
+  "tomli-w>=1.0.0",
+]
+
+[project.scripts]
+chain-code = "chain_code.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
