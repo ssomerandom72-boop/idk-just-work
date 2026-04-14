@@ -8,6 +8,7 @@ Chain Code is an Arch Linux-friendly coding assistant CLI inspired by terminal-f
 - Built for **Arch Linux and Arch-based distros** (Manjaro, EndeavourOS, Garuda, etc.).
 - Includes:
   - interactive chat
+  - autonomous agent mode that can execute shell commands
   - one-shot prompts
   - shell command execution helper
   - project-aware context loading
@@ -42,6 +43,7 @@ chain-code init
 chain-code config set provider ollama
 chain-code config set model codellama:13b
 chain-code ask "Summarize this repository"
+chain-code agent "inspect this repo and list TODOs"
 chain-code chat
 ```
 
@@ -77,6 +79,7 @@ Then configure provider and model with `chain-code config set`.
 - `chain-code config show` – print current config.
 - `chain-code config set <key> <value>` – update config.
 - `chain-code ask "..."` – one-shot prompt with repository context.
+- `chain-code agent "..."` – autonomous mode: model plans and executes shell commands.
 - `chain-code chat` – REPL chat session.
 - `chain-code run "..."` – run shell command with confirmation.
 - `chain-code doctor` – verify runtime deps and provider connectivity.
